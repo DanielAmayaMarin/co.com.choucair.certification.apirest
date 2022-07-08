@@ -14,7 +14,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'net.serenity-bdd.aggregator'
 
-group 'org.practice'
+group 'org.api'
 version '1.0'
 
 ext{
