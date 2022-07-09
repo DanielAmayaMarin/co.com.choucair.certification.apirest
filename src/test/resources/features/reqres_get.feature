@@ -1,42 +1,42 @@
 @Get
 Feature: Obtener la información con el metodo get de un usuario
 
-  @Scenario1 @Regression @Smoke
+  @Scenario1 @Regression
   Scenario: Se validará que la respuesta de la API sea exitosa
-    Given Se cargo la información del cliente
+    Given Que se cargo la información del cliente
       | id |
       | 1  |
-    When Llamo el metodo get de la API Usuarios
+    When Llamo el metodo get de la API Usuarios con la data
     Then Debería ver el código del estado 200
 
   @Scenario2 @Regression
   Scenario: Enviar la información, obtener usuario individual y optener la cantidad de la clave
-    Given Se cargo la información del cliente
+    Given Que se cargo la información del cliente
       | id |
-      | 1  |
-    When  Llamo el metodo get de la API Usuarios
+      | 2  |
+    When  Llamo el metodo get de la API Usuarios con la data
     Then Valido la clave de cantidad es 2
 
-  @Scenario3 @Regression
+  @Scenario3 @Regression @Smoke
   Scenario: Se validará que el esquema sea el correcto
-    Given Se cargo la información del cliente
+    Given Que se cargo la información del cliente
       | id |
-      | 1  |
-    When Llamo el metodo get de la API Usuarios
+      | 3  |
+    When Llamo el metodo get de la API Usuarios con la data
     Then Valido el esquema de la respuesta "GetJsonSchema"
 
   @Scenario4 @Regression
-  Scenario: Se validará que los datos de la respuesta sean correctos
-    Given Se cargo la información del cliente
+  Scenario: Se validará que los campos de la respuesta sean correctos
+    Given Que se cargo la información del cliente
       | id |
-      | 1  |
-    When Llamo el metodo get de la API Usuarios
+      | 4  |
+    When Llamo el metodo get de la API Usuarios con la data
     Then Valido los campos que obtengo de la respuesta
 
   @Scenario5 @Regression
-  Scenario: Enviar la información, obtener usuario individual y optener los datos
-    Given Se cargo la información del cliente
+  Scenario: Se validará los valores de la respuesta sean correctos
+    Given Que se cargo la información del cliente
       | id |
-      | 1  |
-    When Llamo el metodo get de la API Usuarios
+      | 5  |
+    When Llamo el metodo get de la API Usuarios con la data
     Then Valido la respuesta que contiene los datos esperados
